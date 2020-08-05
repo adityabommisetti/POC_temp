@@ -1,0 +1,118 @@
+
+  handleNewTAb = (URL) => {
+
+    if (this.state.code !== 403) {
+      if (winObj != null) {
+        if (!winObj.closed) {
+          if (oldUrl !== URL && oldUrl !== null) {
+            //if url changes
+
+            winObj.close();
+            winObj = window.open(
+              URL,
+              URL,
+              "height=600,width=1338,top=50,resizable=yes,scrollbars=yes",
+              false
+            );
+            oldUrl = URL;
+          } else {
+            winObj.focus();
+            return winObj;
+          }
+        } else {
+          //if close then reopen
+          winObj = null;
+          winObj = window.open(
+            URL,
+            URL,
+            "height=600,width=1338,top=50,resizable=yes,scrollbars=yes",
+            false
+          );
+          return winObj;
+        }
+      } else {
+        //if new  url
+        winObj = window.open(
+          URL,
+          URL,
+          "height=600,width=1338,top=50,resizable=yes,scrollbars=yes",
+          false
+        );
+        oldUrl = URL;
+        objArry.push(winObj);
+        return winObj;
+      }
+    }
+  };
+  handleNewTAbEDP = (URL) => {
+    if (this.state.code !== 403) {
+      if (edpobj != null) {
+        if (!edpobj.closed) {
+          if (oldUrl !== URL && oldUrl !== null) {
+            //if url changes
+
+            edpobj.close();
+            edpobj = window.open(
+              URL,
+              URL,
+              "height=600,width=1338,top=50,resizable=yes,scrollbars=yes",
+              false
+            );
+            oldUrl = URL;
+          } else {
+            edpobj.focus();
+            return edpobj;
+          }
+        } else {
+          //if close then reopen
+          edpobj = null;
+          edpobj = window.open(
+            URL,
+            URL,
+            "height=600,width=1338,top=50,resizable=yes,scrollbars=yes",
+            false
+          );
+          return edpobj;
+        }
+      } else {
+        //if new  url
+        edpobj = window.open(
+          URL,
+          URL,
+          "height=600,width=1338,top=50,resizable=yes,scrollbars=yes",
+          false
+        );
+        oldUrl = URL;
+        objArry.push(edpobj);
+        return edpobj;
+      }
+    }
+  };
+  handlReproting = (URL) => {
+    if (this.state.code !== 403) {
+      if (reportObj != null) {
+        if (reportObj.closed) {
+          reportObj = window.open(
+            URL,
+            URL,
+            "height=600,width=1338,top=50,resizable=yes,scrollbars=yes",
+            false
+          );
+        } else {
+          reportObj.focus();
+          return reportObj;
+        }
+        return reportObj;
+      } else {
+        reportObj = window.open(
+          URL,
+          URL,
+          "height=600,width=1338,top=50,resizable=yes,scrollbars=yes",
+          false
+        );
+
+        objArry.push(reportObj);
+        return reportObj;
+      }
+    }
+  }; 
